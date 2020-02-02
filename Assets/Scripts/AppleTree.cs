@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AppleTree : MonoBehaviour
 {
-    [Header("Set in Inspector")]
+   [Header("Set in Inspector")]
     // Prefab for instantiating apples
     public GameObject applePrefab;
 
@@ -38,10 +38,16 @@ public class AppleTree : MonoBehaviour
             speed = Mathf.Abs(speed); // move right 
         } else if (pos.x > edge) {
             speed = -Mathf.Abs(speed); // move left
-        } else if (Random.value < changeDirection)
-        {
-            speed *= -1; // change direction
-        }
+        }  
+    }
 
+    // change direction speed moved to FixedUpdate to make sure regardless how fast/slow the computer, 
+    // it would be called exactly 50 times per second, while Update() can be called as fast/slow depends on the computer.
+    void FixedUpdate() 
+    {
+        if (Random.value < changeDirection)
+        {
+            speed *= -1; // change direction (negative value = opposite direction)
+        }
     }
 }

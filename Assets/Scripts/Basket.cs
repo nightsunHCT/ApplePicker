@@ -15,7 +15,7 @@ public class Basket : MonoBehaviour
         // Get the Text component of that GameObject
         scoreGT = scoreGO.GetComponent<Text>();
         // Set the starting number of points to 0
-        scoreGT.text = "O";
+        scoreGT.text = "0";
     }
 
     void Update()

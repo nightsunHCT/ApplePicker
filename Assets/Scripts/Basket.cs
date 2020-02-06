@@ -32,7 +32,8 @@ public class Basket : MonoBehaviour
         // Move the x position of thsi Basket to the x position of the mouse 
         Vector3 pos = this.transform.position;
         pos.x = mousePos3D.x;
-        this.transform.position = pos; 
+        // pos.y = mousePos3D.y;
+        this.transform.position = pos;
     }
 
     void OnCollisionEnter (Collision coll)
